@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Download.it | Upload</title>
+  </head>
+  <body>
+    <h1>Upload</h1>
+    <input type="file" id="input">
+    <button onclick="upload()">Upload</button>
+    <script>
+    function upload() {
+      const file = document.getElementById('input').value
+      window.location.assign('/upload?file=' + file)
+    }
+      </script>
+    </body>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="/style">
+  <title>Download.it | Best Youtube MP4 Converter</title>
+</head>
+<body>
+<h1><img src="/favicon"><b>Download.it</b></h1><hr><nav><div class="theme-switch-wrapper"><em><b><span>Dark Mode</b></span></em><span> </span><label class="theme-switch" for="checkbox"><input type="checkbox" id="checkbox" /><div class="slider round"></div></label>
+  </div></nav>
+<section>
+    <h2 style="color: red; font-family: Roboto, sans-serif;"><b>Enter a YouTube Video URL</b></h2>
+<div class="form-group">
+    <input class="form-field" id="url" type="text" placeholder="youtu.be/dQw4w9WgXcQ">
+</div><br><button class="w3-button w3-red w3-round-large" id="buttondownload" onclick="window.location.assign(`/download?url=${document.getElementById('url').value}`)">Download</button>
+<script>
+const input = document.getElementById('url')
+
+input.value = ''
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('emoji').value = "☀"
+        localStorage.setItem('theme', 'dark');
+    }
+    else {        document.documentElement.setAttribute('data-theme', 'light');
+    document.getElementById('emoji').value = "🌙"
+          localStorage.setItem('theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+  </section>
+  </body>
+  </html>
